@@ -9,15 +9,19 @@ class Plant():
             self.name: str = name
             self._height: int = height
             self._agedays: int = age
-            self._taxGrow: float = 0.8
+            self._taxGrow: float = 2.1
+            self._valueBloom: str = "false"
 
+    @staticmethod
+    def older_then_year(age: int) -> bool:
+        return age > 365
+    
     def show(self) -> None:
-        print(f"""=== Garden Security Sestem ===
-{self.name}: {self._height:.1f}cm, {self._agedays} days old
-""")
+        print(f"{self.name}: {self._height:.1f}cm, {self._agedays} days old")
 
     def _grow(self) -> None:
-        self._height += self.taxGrow
+        self._height += self._taxGrow
+        self._age()
 
     def _age(self) -> None:
         self._agedays += 1
@@ -39,10 +43,3 @@ class Plant():
 
     def get_age(self) -> int:
         return self._agedays
-
-
-if __name__ == "__main__":
-    rose = Plant("Rose", 166, 26)
-    rose.show()
-    rose.set_age(20)
-    rose.show()
