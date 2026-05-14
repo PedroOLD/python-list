@@ -1,16 +1,17 @@
-def input_temperature(temp_str):
+def input_temperature(temp_str) -> int:
     """
         converte uma string em um number
     """
     number: int = int(temp_str)
     return number
 
-def test_temperature():
+
+def test_temperature() -> None:
     """
         test as funcoes de input
     """
     print("=== Garden Temperature ===")
-    
+
     print()
     print('Input data is "25"')
     try:
@@ -18,7 +19,7 @@ def test_temperature():
         print(f"Temperature is now {current_number}°C")
     except Exception as e:
         print("Caught input_temperature error", e)
-    
+
     print()
     print('Input data is "25b"')
     try:
@@ -26,7 +27,7 @@ def test_temperature():
         print(f"Temperature is now {current_number}°C")
     except Exception as e:
         print("Caught input_temperature error", e)
-    
+
     print()
     print('Input data is "abc"')
     try:
@@ -34,6 +35,7 @@ def test_temperature():
         print(f"Temperature is now {current_number}°C")
     except Exception as e:
         print("Caught input_temperature error", e)
+
 
 if __name__ == "__main__":
     test_temperature()
