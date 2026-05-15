@@ -35,7 +35,3 @@ def test_temperature() -> None:
         print(f"Temperature is now {current_number}°C")
     except Exception as e:
         print("Caught input_temperature error", e)
-
-
-if __name__ == "__main__":
-    test_temperature()
